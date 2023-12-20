@@ -52,7 +52,7 @@ public class UserControllerV2 {
         UserDto user = userService.login(request.getUsername(), request.getPassword());
         Cookie cookie = new Cookie("userId", user.getId().toString());
         cookie.setPath("/V2/");
-        response.addCookie(cookie);;
+        response.addCookie(cookie);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .body(userMapper.toUserResponse(user));
